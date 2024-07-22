@@ -369,6 +369,9 @@
     color: var(--bs-white);
 }
 
+.services-item:hover .services-content-icon h4 {
+    color: var(--bs-white);
+}
 /*** Services End ***/
 
 
@@ -376,14 +379,15 @@
 
 .project-img {
     position: relative;
-    padding: 15px;
+    padding: 10px;
+    width: 200px;
 }
 
 .project-img::before {
     content: "";
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     top: 0;
     left: 0;
     background: var(--bs-secondary);
@@ -395,8 +399,8 @@
 
 .project-img::after {
     content: "";
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -417,6 +421,10 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
+}
+
+.project-content h4 {
+    font-size: 12px;
 }
 
 .project-content a {
