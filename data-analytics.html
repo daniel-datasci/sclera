@@ -26,6 +26,54 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+            .icon-container {
+                position: relative;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+    
+            .icon-container .fas {
+                font-size: 40px;
+                color: #26d48c;
+                transition: transform 0.3s;
+            }
+    
+            .ripple-effect {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 40px;
+                height: 40px;
+                background: rgba(38, 212, 140, 0.4);
+                border-radius: 50%;
+                animation: ripple 1s infinite;
+                opacity: 0;
+                pointer-events: none;
+            }
+    
+            @keyframes ripple {
+                0% {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 0.5;
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(2);
+                    opacity: 0;
+                }
+            }
+    
+            .icon-container:hover .ripple-effect {
+                opacity: 1;
+            }
+    
+            .col-lg-3:hover .icon-container .fas {
+                transform: scale(1.2);
+            }
+        </style>
     </head>
 
     <body>
@@ -60,7 +108,7 @@
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-0">
                     <a href="index.html" class="navbar-brand">
-                        <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>
+                        <img src="img/sclera_logo.png" alt="Forge Logo" class="img-fluid" style="max-height: 50px;">
                     </a>
                     <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -69,21 +117,21 @@
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
                             <a href="index.html" class="nav-item nav-link">Home</a>
                             <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="service.html" class="nav-item nav-link">Services</a>
-                            <a href="project.html" class="nav-item nav-link">Projects</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
                                 <div class="dropdown-menu rounded">
-                                    <a href="blog.html" class="dropdown-item">Our Blog</a>
-                                    <a href="team.html" class="dropdown-item active">Our Team</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
+                                    <a href="market.html" class="dropdown-item">Market & Opportunity Research</a>
+                                    <a href="data-analytics.html" class="dropdown-item active">SEO</a>
+                                    <a href="brand.html" class="dropdown-item">Brand Research</a>
+                                    <a href="social.html" class="dropdown-item">Social Media Management</a>
+                                    <a href="service.html" class="dropdown-item">Digital Marketing</a>
+                                    <a href="404.html" class="dropdown-item">Design Management</a>
                                 </div>
                             </div>
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
                     </div>
-                    <div class="d-none d-xl-flex flex-shirink-0">
+                    <div class="d-none d-xl-flex flex-shrink-0">
                         <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
                             <a href="" class="position-relative animated tada infinite">
                                 <i class="fa fa-phone-alt text-white fa-2x"></i>
@@ -107,154 +155,282 @@
 
         
         <!-- Page Header Start -->
-        <div class="container-fluid page-header py-5">
-            <div class="container text-center py-5">
-                <h1 class="display-2 text-white mb-4 animated slideInDown">Our Team</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-                    <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Our Team</li>
-                    </ol>
-                </nav>
+        <!-- Carousel Start -->
+        <div class="container-fluid px-0">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/carousel-1.jpg" class="img-fluid" alt="First slide">
+                        <div class="carousel-caption">
+                            <div class="container carousel-content">
+                                <h1 class="text-white display-1 mb-4 animated fadeInRight">Experience <span class="text-secondary">world-class SEO</span> that makes a world of difference.</h1>
+                                <p class="mb-4 text-white fs-5 animated fadeInDown">Our SEO services focus your resources where they’ll drive the most value for your business. Based on your competitive landscape and target audience, we have plans to help you achieve your goals.</p>
+                                <a href="" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Discover</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Page Header End -->
 
 
         <!-- Fact Start -->
-        <div class="container-fluid bg-secondary py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
-                        <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">99</h1>
-                            <h5 class="text-white mt-1">Success in getting happy customer</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
-                        <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">25</h1>
-                            <h5 class="text-white mt-1">Thousands of successful business</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
-                        <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">120</h1>
-                            <h5 class="text-white mt-1">Total clients who love HighTech</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
-                        <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">5</h1>
-                            <h5 class="text-white mt-1">Stars reviews given by satisfied clients</h5>
-                        </div>
-                    </div>
-                </div>
+        <div class="container-fluid py-5" style="background-color: #25273f;">
+            <div class="text-center mx-auto pb-8 wow fadeIn" data-wow-delay=".3s" style="max-width: 1500px;">
+                <h1 style="font-size: 60px; color: white;">Relax, <span style="color: #26d48c;">we’ve got this</span></h1>
             </div>
         </div>
         <!-- Fact End -->
 
 
-        <!-- Team Start -->
-        <div class="container-fluid py-5 my-5 team">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Team</h5>
-                    <h1>Meet our expert Team</h1>
-                </div>
-                <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay=".5s">
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-1.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Full Name</h4>
-                                    <p class="m-0">Designation</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
+        <!-- About Start -->
+        <div class="container-fluid py-5 my-5">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <p class="mb-4" style="font-size: 20px;">
+                            <i class="fas fa-check-circle" style="color: #25273f;"></i> Strategic
+                        </p>
+                        <br>
+                        <p class="mb-4" style="font-size: 20px;">
+                            <i class="fas fa-check-circle" style="color: #25273f;"></i> Optimized
+                        </p>
+                        <br>
+                        <p class="mb-4" style="font-size: 20px;">
+                            <i class="fas fa-check-circle" style="color: #25273f;"></i> Data-driven
+                        </p>
+                        <br>
+                        <p class="mb-4" style="font-size: 20px;">
+                            <i class="fas fa-check-circle" style="color: #25273f;"></i> Results-focused
+                        </p>
                     </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-2.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Full Name</h4>
-                                    <p class="m-0">Designation</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-3.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Full Name</h4>
-                                    <p class="m-0">Designation</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-4.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Full Name</h4>
-                                    <p class="m-0">Designation</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <h4 class="mb-4" style="font-size: 25px;">Getting visitors to your website is the first priority, but having them take a desired action once there is essential, too. </h4>
+                        <p class="mb-4" style="font-size: 20px;">We’ve completed thousands of A/B tests and optimized more than 175+ client websites and have a proven method for increasing traffic and conversions. 
+                            We know your to-do list is long, so ours is simple — to provide optimized content that delivers.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Team End -->
+        <!-- About End -->
+
+        <!-- What Makes Us Different Start -->
+        <div class="container-fluid py-5">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <h1 class="mb-4" style="font-size: 40px; color: #25273f;">Publish content <br>visitors really want</h1>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <h4 class="mb-4" style="font-size: 25px; color: #25273f;">Our expert approach ensures that fresh content is delivered how users search for it. </h4>
+                        <p class="mb-4" style="font-size: 20px;">We do back-end SEO research on keyword performance, trends, and competitors. Our holistic approach means your website will rank well in search engines, generate more visits, and lead to improved conversions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid py-5" style="background-color: #25273f;">
+            <div class="container pt-5">
+                <div class="text-center mx-auto pb-8 wow fadeIn" data-wow-delay=".3s" style="max-width: 1200px; padding-bottom: 5em; padding-top: 5em;">
+                    <h1 class="text-white mt-1" style="font-size: 55px; margin-bottom: 1em; color: white;">Where high-impact results meet<span style="color: #26d48c;"> long-term success.</span></h1>
+                    <p class="mb-4" style="font-size: 20px; color: white;">From keyword research and competitive analysis to site architecture and conversion optimization, learn how our website SEO services can take your business from invisible to invincible.
+                    </p>
+                    <a href="about.html" class="btn btn-secondary rounded-pill px-5 py-3 text-white">Get Started</a>
+                </div>
+            </div>
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="icon-container">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="ripple-effect"></div>
+                        </div>
+                        <p class="mb-4" style="font-size: 20px; color: white; text-align: center;">Mobile SEO</p>
+                        <p class="mb-4" style="font-size: 15px; text-align: center;">We can set up your website properly to capture the increasing volume of mobile traffic from people</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="icon-container">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="ripple-effect"></div>
+                        </div>
+                        <p class="mb-4" style="font-size: 20px; color: white; text-align: center;">YouTube</p>
+                        <p class="mb-4" style="font-size: 15px; text-align: center;">We can help you maximize your ROI in video content by getting it in front of YouTube users.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="icon-container">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="ripple-effect"></div>
+                        </div>
+                        <p class="mb-4" style="font-size: 20px; color: white; text-align: center;">International SEO</p>
+                        <p class="mb-4" style="font-size: 15px; text-align: center;">We ensure that your content resonates with diverse markets, helping you increase conversions worldwide.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="icon-container">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="ripple-effect"></div>
+                        </div>
+                        <p class="mb-4" style="font-size: 20px; color: white; text-align: center;">Keyword research</p>
+                        <p class="mb-4" style="font-size: 15px; text-align: center;">Our in-depth keyword research services uncover the most relevant and high-performing keywords for your business. </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="icon-container">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="ripple-effect"></div>
+                        </div>
+                        <p class="mb-4" style="font-size: 20px; color: white; text-align: center;">SEO Audits</p>
+                        <p class="mb-4" style="font-size: 15px; text-align: center;">Our comprehensive SEO audits provide a detailed analysis of your website's performance.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="icon-container">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="ripple-effect"></div>
+                        </div>
+                        <p class="mb-4" style="font-size: 20px; color: white; text-align: center;">Technical SEO</p>
+                        <p class="mb-4" style="font-size: 15px; text-align: center;">We optimize your website's technical foundation to ensure it meets the latest search engine standards.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="icon-container">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="ripple-effect"></div>
+                        </div>
+                        <p class="mb-4" style="font-size: 20px; color: white; text-align: center;">On-page SEO</p>
+                        <p class="mb-4" style="font-size: 15px; text-align: center;">We fine-tune elements such as meta tags to improve your site's visibility and relevance for targeted keywords.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="icon-container">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="ripple-effect"></div>
+                        </div>
+                        <p class="mb-4" style="font-size: 20px; color: white; text-align: center;">Off-page SEO</p>
+                        <p class="mb-4" style="font-size: 15px; text-align: center;">We enhance your website's authority and trustworthiness through strategic off-page SEO practices. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid py-5">
+            <div class="container pt-5">
+                <div class="text-center mx-auto pb-8 wow fadeIn" data-wow-delay=".3s" style="max-width: 1200px; padding-bottom: 5em; padding-top: 5em;">
+                    <h1 style="font-size: 40px; color: #25273f;">Your SEO Strategy Should Be<span style="color: #868686;"> as Unique as Your Business</span></h1>
+                    <p class="mb-4" style="font-size: 15px; text-align: center;">Victorious campaigns use proven SEO strategies that deliver dependable gains while flexing to your needs for a bespoke experience.</p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-6 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <hr>
+                        <p class="mb-4" style="font-size: 15px;">
+                            <i class="fas fa-check-circle" style="color: #25273f;"></i> Sustainable growth with long-term ROI.
+                        </p>
+                        <hr>
+                        <br>
+                        <p class="mb-4" style="font-size: 15px;">
+                            <i class="fas fa-check-circle" style="color: #25273f;"></i> Diversified services rooted in innovation.​
+                        </p>
+                        <hr>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <hr>
+                        <p class="mb-4" style="font-size: 15px;">
+                            <i class="fas fa-check-circle" style="color: #25273f;"></i> Empowerment through education.​
+                        </p>
+                        <hr>
+                        <br>
+                        <p class="mb-4" style="font-size: 15px;">
+                            <i class="fas fa-check-circle" style="color: #25273f;"></i> A singular focus on one goal at a time.​
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid py-5" style="background-color: #25273f;">
+            <div class="container pt-5">
+                <div class="text-center mx-auto pb-8 wow fadeIn" data-wow-delay=".3s" style="max-width: 1200px; padding-bottom: 5em; padding-top: 5em;">
+                    <h1 class="text-white mt-1" style="font-size: 55px; margin-bottom: 1em; color: white;">Get <span style="color: #26d48c;">clear-cut results</span> you can count on.</h1>
+                    <p class="mb-4" style="font-size: 20px; color: #ffffff;">It’s not just about boosting organic visibility and driving traffic to your site, but building an SEO strategy that consistently aligns with your growth goals to provide tangible results.</p>
+                </div>
+            </div>
+
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <h1 class="mb-4" style="font-size: 40px; color: #26d48c;">Learn</h1>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <p class="mb-4" style="font-size: 20px; color: #b8b8b8;">Before we make any recommendations, we take a thorough deep dive into understanding your business and its objectives.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <h1 class="mb-4" style="font-size: 40px; color: #26d48c;">Strategize</h1>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <p class="mb-4" style="font-size: 20px; color: #b8b8b8;">After attuning ourselves to your business and your goals, we’ll build the framework of your SEO strategy — starting with keywords.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <h1 class="mb-4" style="font-size: 40px; color: #26d48c;">Prepare</h1>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <p class="mb-4" style="font-size: 20px; color: #b8b8b8;">With your Keyword Strategy as the framework for your campaign, we’ll evaluate your business’s on-site and off-site elements under the lens of that strategy.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <h1 class="mb-4" style="font-size: 40px; color: #26d48c;">Implement</h1>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <p class="mb-4" style="font-size: 20px; color: #b8b8b8;">Our SEO framework provides you with a reliable stream of search optimizations that form an action plan that’s mindful of your internal resources.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <h1 class="mb-4" style="font-size: 40px; color: #26d48c;">Grow</h1>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <p class="mb-4" style="font-size: 20px; color: #b8b8b8;">Once your campaign is in full swing, it’s all about measuring progress toward your goals and maintaining a steady course toward sustainable SEO success.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container pt-5">
+                <div class="text-center mx-auto pb-8 wow fadeIn" data-wow-delay=".3s" style="max-width: 1200px; padding-bottom: 5em; padding-top: 5em;">
+                    <h1 class="text-white mt-1" style="font-size: 55px; margin-bottom: 1em; color: white;">Could Your SEO Efforts Use a Facelift?</h1>
+                    <a href="about.html" class="btn btn-secondary rounded-pill px-5 py-3 text-white">Free Consultation</a>
+                </div>
+            </div>
+        </div>
+        <!-- What Makes Us Different End -->
 
 
         <!-- Footer Start -->
-         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+        <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
             <div class="container pt-5 pb-4">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
-                        <a href="index.html">
-                            <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>
+                        <a href="index.html" class="navbar-brand">
+                            <img src="img/sclera_logo.png" alt="Forge Logo" class="img-fluid" style="max-height: 50px;">
                         </a>
-                        <p class="mt-4 text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta facere delectus qui placeat inventore consectetur repellendus optio debitis.</p>
                         <div class="d-flex hightech-link">
                             <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
                             <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
@@ -265,27 +441,14 @@
                     <div class="col-lg-3 col-md-6">
                         <a href="#" class="h3 text-secondary">Short Link</a>
                         <div class="mt-4 d-flex flex-column short-link">
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact us</a>
+                            <a href="about.html" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>
                             <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Services</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Projects</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Latest Blog</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <a href="#" class="h3 text-secondary">Help Link</a>
-                        <div class="mt-4 d-flex flex-column help-link">
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Terms Of use</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Privacy Policy</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Helps</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>FQAs</a>
-                            <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <a href="#" class="h3 text-secondary">Contact Us</a>
                         <div class="text-white mt-4 d-flex flex-column contact-link">
-                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> 123 Street, New York, USA</a>
+                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Lagos, Nigeria</a>
                             <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> +123 456 7890</a>
                             <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> info@exmple.con</a>
                         </div>
@@ -294,11 +457,11 @@
                 <hr class="text-light mt-5 mb-4">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start">
-                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Your Site Name</a>, All right reserved.</span>
+                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Sclera</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <span class="text-light">Designed By<a href="https://htmlcodex.com" class="text-secondary">HTML Codex</a></span>
+                        <span class="text-light">Designed By Sclera</span>
                     </div>
                 </div>
             </div>
