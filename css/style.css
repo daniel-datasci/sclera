@@ -18,7 +18,7 @@
 
 /*** Button Start ***/
 .btn {
-    font-weight: 600;
+    font-weight: 200;
     transition: .5s;
 }
 
@@ -180,8 +180,8 @@
 }
 
 .carousel-control-prev {
-    width: 90px;
-    height: 60px;
+    width: 70px;
+    height: 40px;
     position: absolute;
     top: 50%;
     left: 0;
@@ -196,8 +196,8 @@
 }
 
 .carousel-control-next {
-    width: 90px;
-    height: 60px;
+    width: 70px;
+    height: 40px;
     position: absolute;
     top: 50%;
     right: 0;
@@ -270,11 +270,11 @@
     }
 
     .carousel-item h1 {
-        font-size: 30px !important;
+        font-size: 34px !important;
     }
 
     .carousel-item p {
-        font-size: 12px !important;
+        font-size: 15px !important;
     }
 }
 
@@ -289,11 +289,11 @@
     }
 
     .carousel-item h1 {
-        font-size: 22px !important;
+        font-size: 23px !important;
     }
 
     .carousel-item p {
-        font-size: 10px !important;
+        font-size: 12px !important;
     }
 }
 
