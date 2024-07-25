@@ -109,6 +109,19 @@
                 }
             }
 
+            .carousel-item video {
+                object-fit: cover;
+                width: 100%;
+                height: 100vh; /* Ensures the video covers the entire height of the viewport */
+            }
+
+            /* Adjustments for smaller screens */
+            @media (max-width: 767px) {
+                .carousel-item video {
+                    height: fit-content;
+                }
+            }
+
         </style>
     </head>
 
@@ -190,15 +203,18 @@
         
         <!-- Page Header Start -->
         <!-- Carousel Start -->
-        <div class="container-fluid px-0">
+        <div class="container-fluid px-0" style="background-color: black;">
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img src="img/carousel-1.jpg" class="img-fluid" alt="First slide">
-                        <div class="carousel-caption">
+                        <video class="d-block w-100" autoplay loop muted playsinline style="object-fit:contain; height: 100vh;">
+                            <source src="img/creative.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="carousel-caption d-flex flex-column justify-content-end align-items-center" style="padding-bottom: 3em;">
                             <div class="container carousel-content">
-                                <h1 class="text-white display-1 mb-4 animated fadeInRight">Make your brand a <span class="text-secondary">growth engine</span>.</h1>
-                                <p class="mb-4 text-white fs-5 animated fadeInDown">Without insightful strategy, your brand could end up looking just like the next one. Or worse, your design and messaging could be misaligned with what you stand for.</p>
+                                <h1 class="text-white display-1 mb-4 animated fadeInRight"></h1>
+                                <p class="mb-4 text-white fs-5 animated fadeInDown"></p>
                                 <a href="" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Discover</button></a>
                             </div>
                         </div>
