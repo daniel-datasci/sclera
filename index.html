@@ -25,6 +25,68 @@
                 background-color: #25273f;
                 border: none;
             }
+
+            .marquee {
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+                width: 100%;
+            }
+
+            .marquee-content {
+                display: inline-block;
+                white-space: nowrap;
+                animation: marquee 90s linear infinite;
+            }
+
+            .marquee-content .project-item {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 60px;
+                width: 150px; /* Set a fixed width for the items */
+            }
+
+            .marquee-content img {
+                width: 100%; /* Ensure images take up the full width of the item */
+                height: auto; /* Maintain aspect ratio */
+                filter: grayscale(100%); /* Apply grayscale filter */
+            }
+
+            @keyframes marquee {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+
+            .carousel-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+                width: 100%;
+            }
+
+            .carousel-text.active {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+
+            .carousel-text.fade-out {
+                opacity: 0;
+                transform: translate(-50%, -50%) translateX(100%);
+            }
+
+            .carousel-text.fade-in {
+                opacity: 1;
+                transform: translate(-50%, -50%) translateX(0);
+            }
+
+
         </style>
 
         <!-- Google Web Fonts -->
@@ -59,27 +121,6 @@
         </div>
         <!-- Spinner End -->
 
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-dark py-2 d-none d-md-flex">
-            <div class="container">
-                <div class="d-flex justify-content-between topbar">
-                    <div class="top-info">
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Lagos, Nigeria</small>
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>info@sclera.com.ng</small>
-                    </div>
-                    <div id="note" class="text-secondary d-none d-xl-flex">
-                        <small>Building Brands, Delivering Results</small>
-                    </div>
-                    
-                    <div class="top-link">
-                        <a href="https://www.instagram.com/sclera.ng?igsh=MTloOW80czE0ZmZ3cQ%3D%3D&utm_source=qr" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                        <a href="https://www.linkedin.com/company/sclerax/" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Topbar End -->
-
         <!-- Navbar Start -->
         <div class="container-fluid bg-primary">
             <div class="container">
@@ -90,7 +131,7 @@
                     <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                    <div class="collapse navbar-collapse bg-transparent align-items-right" id="navbarCollapse">
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
                             <a href="index.html" class="nav-item nav-link active text-secondary">Home</a>
                             <a href="about.html" class="nav-item nav-link">About</a>
@@ -108,7 +149,7 @@
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
                     </div>
-                    <div class="d-none d-xl-flex flex-shrink-0">
+                    <!--<div class="d-none d-xl-flex flex-shrink-0">
                         <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
                             <a href="" class="position-relative animated tada infinite">
                                 <i class="fa fa-phone-alt text-white fa-2x"></i>
@@ -121,10 +162,7 @@
                             <span class="text-white-50">Have any questions?</span>
                             <span class="text-secondary">Call: +2347026395253</span>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center ms-4 ">
-                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
-                        </div>
-                    </div>
+                    </div>-->
                 </nav>
             </div>
         </div>
@@ -133,56 +171,31 @@
         <!-- Carousel Start -->
         <div class="container-fluid px-0">
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-                    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
-                    <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
-                </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <img src="img/carousel-11.png" class="img-fluid" alt="First slide">
                         <div class="carousel-caption">
                             <div class="container carousel-content">
-                                <h1 class="text-white display-1 mb-4 animated fadeInRight">Let Our<span class="text-secondary"> Market Research Skills</span> Work For You.</h1>
-                                <p class="mb-4 text-white fs-5 animated fadeInDown">We provide end-to-end market research services for startups and growing businesses, allowing them to position themselves as an authority in their industry.</p>
-                                <a href="#happySection" id="homeSection" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
-                                <a href="#contactSection" id="getInTouchBtn" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/carousel-12.png" class="img-fluid" alt="Second slide">
-                        <div class="carousel-caption">
-                            <div class="container carousel-content">
-                                <h1 class="text-white display-1 mb-4 animated fadeInLeft">Start Making Smarter Decisions</h1>
-                                <p class="mb-4 text-white fs-5 animated fadeInDown">Leverage our cutting-edge market research and data analytics to uncover hidden trends, understand your customers, and drive strategic growth.</p>
-                                <a href="market.html" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
-                                <a href="#contactSection" id="getInTouchBtn" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/carousel-13.png" class="img-fluid" alt="Third slide">
-                        <div class="carousel-caption">
-                            <div class="container carousel-content">
-                                <h1 class="text-white display-1 mb-4 animated fadeInRight">We give companies the confidence to launch winning products</h1>
-                                <p class="mb-4 text-white fs-5 animated fadeInDown">Our research provides the simplest, most in-depth way to understand your consumers’ needs, attitudes, and pain points so you can bring exceptional products to market.</p>
-                                <a href="brand.html" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
-                                <a href="#contactSection" id="getInTouchBtn" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
+                                <div id="textSet1" class="carousel-text active">
+                                    <h1 class="text-white display-1 mb-4 animated">Let Our<span class="text-secondary"> Market Research Skills</span> Work For You.</h1>
+                                    <p class="mb-4 text-white fs-5 animated">We provide end-to-end market research services for startups and growing businesses, allowing them to position themselves as an authority in their industry.</p>
+                                </div>
+                                <div id="textSet2" class="carousel-text">
+                                    <h1 class="text-white display-1 mb-4 animated">Start Making Smarter Decisions</h1>
+                                    <p class="mb-4 text-white fs-5 animated">Leverage our cutting-edge market research and data analytics to uncover hidden trends, understand your customers, and drive strategic growth.</p>
+                                </div>
+                                <div class="d-flex flex-column flex-sm-row justify-content-center" style="padding-top: 22rem;">
+                                    <a href="#happySection" id="homeSection" class="me-0 me-sm-2 mb-2 mb-sm-0"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
+                                    <a href="#contactSection" id="getInTouchBtn" class="ms-0 ms-sm-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
+        
+        
         <!-- Carousel End -->
 
 
@@ -248,113 +261,230 @@
 
         <div class="container-fluid project py-5 mb-5">
             <div class="container">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                <div class="marquee">
+                    <div class="marquee-content">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">Zenith Bank Nigeria</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="Zenith Bank Nigeria">
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">Union Bank Nigeria</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="Union Bank Nigeria">
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">Black Stone Capital</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="Black Stone Capital">
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">SprkLabs</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="SprkLabs">
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">Castle Studios</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="Castle Studios">
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">Titan Trust Bank</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="Titan Trust Bank">
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">Tots n Toys</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="Tots n Toys">
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">Novartis</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="Novartis">
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
                         <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a class="text-center">
-                                        <h4 class="text-secondary">The Eye Doctors</h4>
-                                    </a>
-                                </div>
-                            </div>
+                            <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="The Eye Doctors">
+                        </div>
+                        <!-- Repeat images to create continuous loop -->
+                        <div class="project-item">
+                            <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="Zenith Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="Union Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="Black Stone Capital">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="SprkLabs">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="Castle Studios">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="Titan Trust Bank">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="Tots n Toys">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="Novartis">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="The Eye Doctors">
+                        </div>
+                        <!-- Repeat images to create continuous loop -->
+                        <div class="project-item">
+                            <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="Zenith Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="Union Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="Black Stone Capital">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="SprkLabs">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="Castle Studios">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="Titan Trust Bank">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="Tots n Toys">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="Novartis">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="The Eye Doctors">
+                        </div>
+                        <!-- Repeat images to create continuous loop -->
+                        <div class="project-item">
+                            <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="Zenith Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="Union Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="Black Stone Capital">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="SprkLabs">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="Castle Studios">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="Titan Trust Bank">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="Tots n Toys">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="Novartis">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="The Eye Doctors">
+                        </div>
+                        <!-- Repeat images to create continuous loop -->
+                        <div class="project-item">
+                            <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="Zenith Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="Union Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="Black Stone Capital">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="SprkLabs">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="Castle Studios">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="Titan Trust Bank">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="Tots n Toys">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="Novartis">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="The Eye Doctors">
+                        </div>
+                        <!-- Repeat images to create continuous loop -->
+                        <div class="project-item">
+                            <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="Zenith Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="Union Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="Black Stone Capital">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="SprkLabs">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="Castle Studios">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="Titan Trust Bank">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="Tots n Toys">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="Novartis">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="The Eye Doctors">
+                        </div>
+                        <!-- Repeat images to create continuous loop -->
+                        <div class="project-item">
+                            <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="Zenith Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="Union Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="Black Stone Capital">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="SprkLabs">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="Castle Studios">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="Titan Trust Bank">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="Tots n Toys">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="Novartis">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="The Eye Doctors">
+                        </div>
+                        <!-- Repeat images to create continuous loop -->
+                        <div class="project-item">
+                            <img src="img/project-8.png" class="img-fluid w-100 rounded" alt="Zenith Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-4.png" class="img-fluid w-100 rounded" alt="Union Bank Nigeria">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-1.png" class="img-fluid w-100 rounded" alt="Black Stone Capital">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-2.png" class="img-fluid w-100 rounded" alt="SprkLabs">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-3.png" class="img-fluid w-100 rounded" alt="Castle Studios">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-5.png" class="img-fluid w-100 rounded" alt="Titan Trust Bank">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-6.png" class="img-fluid w-100 rounded" alt="Tots n Toys">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-7.png" class="img-fluid w-100 rounded" alt="Novartis">
+                        </div>
+                        <div class="project-item">
+                            <img src="img/project-9.png" class="img-fluid w-100 rounded" alt="The Eye Doctors">
                         </div>
                     </div>
                 </div>
@@ -714,7 +844,7 @@
                                     style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
-                        <form id="contactForm" method="post" action="https://formsubmit.co/danielanalytic@gmail.com" name="sendMessage" class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+                        <form id="contactForm" method="post" action="https://formsubmit.co/info@sclera.com.ng" name="sendMessage" class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
                             <div>
                                 <div class="p-5 rounded contact-form">
                                     <div class="mb-4">
@@ -826,6 +956,33 @@
         }
     }
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const textSet1 = document.getElementById('textSet1');
+    const textSet2 = document.getElementById('textSet2');
+    let activeText = textSet1;
+
+    function toggleText() {
+        if (activeText === textSet1) {
+            textSet1.classList.remove('fade-in');
+            textSet1.classList.add('fade-out');
+            textSet2.classList.remove('fade-out');
+            textSet2.classList.add('fade-in');
+            activeText = textSet2;
+        } else {
+            textSet2.classList.remove('fade-in');
+            textSet2.classList.add('fade-out');
+            textSet1.classList.remove('fade-out');
+            textSet1.classList.add('fade-in');
+            activeText = textSet1;
+        }
+    }
+
+    setInterval(toggleText, 5000); // Change text every 5 seconds
+});
+
+    </script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
